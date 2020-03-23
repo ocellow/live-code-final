@@ -13,13 +13,16 @@ function authorization(req, res, next) {
           status: 404,
           msg: "Data not found!"
         }
-      } else if(data.UserId === req.user.id){
+      } else if (data.UserId === req.user.id) {
         next()
       } else {
         throw {
           status: 400,
-          msg: ""
+          msg: "Unauthorization!"
         }
       }
+    })
+    .catch(err => {
+      next(err)
     })
 }
