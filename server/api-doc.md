@@ -133,7 +133,7 @@ Request:
 {
   "report": {
     "id": "integer",
-    "report": "integer",
+    "cases": "integer",
     "UserId": "integer",
     "CountryId": "integer",
     "createdAt": "2020-03-17T12:00:56.894Z",
