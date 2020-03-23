@@ -34,22 +34,14 @@ class ReportController {
       })
   }
   static destroy(req, res, next) {
-    const destroy = Report.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-    const findOne = Report.findOne({
-      where: {
-        id: req.params.id
-      }
-    })
+    const destroy = Report.destroy({where: {id: req.params.id}})
+    const findOne = Report.findOne({where: {id: req.params.id}})
     Promise.all([findOne, destroy])
       .then(data => {
         res.status(200).json({ country: data[0], report: "Successfully delete" })
       })
       .catch(err => {
-
+        next(err)
       })
   }
 }

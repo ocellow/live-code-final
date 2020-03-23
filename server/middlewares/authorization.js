@@ -26,3 +26,5 @@ function authorization(req, res, next) {
       next(err)
     })
 }
+
+module.exports = authorization
